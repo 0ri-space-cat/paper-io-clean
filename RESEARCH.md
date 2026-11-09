@@ -33,14 +33,24 @@
 - The package includes numerous advertising SDK frameworks and ad-oriented assets. The web port requirement remains ad-free; these SDKs are not dependencies for the port.
 - Unity Data bundles and metadata were extracted only to the ignored local path `private-reference/ipa-extract/`. No original binary or extracted game asset is intended for GitHub.
 
+## Gameplay recording inspection (2026-11-09)
+
+- The recording at `/Users/ori.space.cat/Downloads/ScreenRecording_11-09-2026 13-23-33_1.MP4` is 269.16s, 1180×2556 portrait, HEVC; its average video rate is about 58.05 frames/s.
+- Two gameplay stretches are visible at approximately 21–46s and 83–110s, surrounded by home/progression screens and cross-promotion.
+- The arena is a continuous map with curved, irregular territory edges and a distinct water/border region. The view tracks a 3D player character around screen center. The trail is broad, cyan/blue with a pale edge and rounded turns; completed captures show area-color changes, bright effects, particles, and short text callouts.
+- Visible gameplay HUD: a horizontal area/progress bar at top, kill counter at upper left, ranked player percentages on the right, and a minimap at lower left. This is direct visual evidence from the supplied recording; exact layout can vary with safe area and device size.
+- At approximately 21s the player spawns inside a glowing protective effect; around 22–28s the player draws an exposed trail with several turns; around 29s the zone closes and the area visibly fills with a bright capture effect. Later captures trigger larger splash/radial effects and localized feedback. These timestamps are approximate video times, not measured animation playback durations.
+- The recording includes bottom banner ads during matches and a fullscreen cross-promotion sequence around 49–63s. The requested web app must omit both.
+- The video shows gameplay outcomes but no clear touch indicator, so input timing and the precise cause of each turn are not observable from this recording alone. Pixel motion has not yet been calibrated to Unity world units or matched to an exact simulation speed.
+
 ### Limits of this inspection
 
-The IPA version, bundle inventory, named types/methods, and serialized animation source lengths are directly inspected. The scan has not yet established exact board dimensions, live movement rates, collision tolerances, the exact capture implementation, bot decision rules, in-game skin/animation playback timing, or complete gameplay visuals. Native IL2CPP behavior is compiled into the application binary; metadata names and scene assets are useful architecture evidence, not source-level behavioral proof. A v39-aware metadata parse needs validation against the binary's registration tables before relying on serialized method/field indexes or generating code.
+The IPA version, bundle inventory, named types/methods, and serialized animation source lengths are directly inspected. The recording verifies high-level appearance and match flow, but not exact world dimensions, live movement rates, collision tolerances, the capture implementation, bot decision rules, in-game skin/animation playback timing, or full input response. Native IL2CPP behavior is compiled into the application binary; metadata names and scene assets are useful architecture evidence, not source-level behavioral proof. A v39-aware metadata parse needs validation against the binary's registration tables before relying on serialized method/field indexes or generating code.
 
 ## Materials previously reported but still unavailable
 
 - The referenced conversation text is available through the Codex thread history.
-- The gameplay recording and previous Web Lab ZIP archives are not available at their former `/mnt/data` paths or in the searched Downloads/Codex folders. The user has said they will attach the recording again; it has not appeared in the workspace yet.
+- The gameplay recording is now available at the path above. Previous Web Lab ZIP archives remain unavailable at their former `/mnt/data` paths or in the searched Downloads/Codex folders.
 - The IPA is available separately at the path above; it has been inspected and its Unity Data extracted locally.
 - The GitHub repository was empty at clone time.
 
@@ -48,14 +58,14 @@ The IPA version, bundle inventory, named types/methods, and serialized animation
 
 1. Validate v39 metadata parsing against IL2CPP registration structures in the arm64 Mach-O and map method names to native functions.
 2. Map gameplay-critical scene object hierarchies, serialized components, references, runtime config/Addressables, skins, animation clips, and dependencies from the private bundles.
-3. Obtain a gameplay recording or run the original on an iPhone. Measure camera behavior, speed and turn response, trail collision, capture, percentages, bot decisions, animation timing, and audio cues.
+3. Calibrate video pixel movement against the Unity camera/world scale and serialized player/physics configuration. Add controlled reference runs where the input direction and duration are known.
 4. Build an evidence-backed behavior and visual specification. Mark each item confirmed, inferred, or unknown; include numeric values and repeatable observations wherever possible.
 5. Only after the specification is sufficient, implement the port and compare it interaction-by-interaction and frame-by-frame on iPhone Safari. Do not present an approximation as a playable build.
 6. Keep original copyrighted files out of the public repository and public hosting.
 
 ## Product gate
 
-The earlier toy browser scaffold has been removed from the repository. No playable web build should be added until the project has an evidence-backed parity specification for the requested mechanics, original visual presentation, skins, animations, and movement. A reference recording or live iPhone access remains unavailable in this workspace, so real-time behavior and device quality cannot currently be validated.
+The earlier toy browser scaffold has been removed from the repository. No playable web build should be added until the project has an evidence-backed parity specification for the requested mechanics, original visual presentation, skins, animations, and movement. The recording now supports visual comparison, but controlled input measurements and iPhone Safari validation remain outstanding.
 
 ## Open constraints
 
