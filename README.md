@@ -4,9 +4,9 @@ An ad-free browser implementation project targeting the gameplay and presentatio
 
 ## Current status
 
-The repository was empty when this work began. The previous conversation described a Web Lab v3 prototype, Unity asset extraction, and a gameplay recording, but those archives and attachments are not available in this workspace. No prior implementation or extracted materials have therefore been copied or independently verified.
+The repository was empty when this work began. The previous conversation described a Web Lab v3 prototype and a gameplay recording, but those archives are not available in this workspace. The iOS 4.41.0 IPA is now directly available and its Unity data has been inspected locally; the current browser scaffold still has not been reconciled with the original behavior.
 
-An original browser implementation can reproduce observed behavior, but cannot run the proprietary Unity app or its original game logic as-is. Fidelity must be established by comparing measured behavior and visuals against an accessible reference build and recording. The first implementation milestones are the board model, movement, trail closure/capture, collision rules, opponent behavior, and responsive rendering. Advertising is out of scope.
+The IPA is a Unity IL2CPP build, not portable C# source. An original browser implementation can reproduce observed behavior, but cannot run the proprietary Unity app or its original game logic as-is. Fidelity must be established by comparing measured behavior and visuals against an accessible reference build and recording. The IPA exposes scene structure and bundles for research; confirmed details and unverified questions are tracked in [RESEARCH.md](RESEARCH.md). Advertising is out of scope even though ad frameworks are present in the original app.
 
 ## Run
 
