@@ -6,11 +6,11 @@
 - Priority: high-fidelity behavior and presentation; no advertising.
 - Startup artwork and extra-mechanics changes are deferred.
 
-## Findings reported by the prior conversation (now partly superseded by direct inspection)
+## Prior chat reports (not equivalent to inspected artifacts)
 
-- A prototype called Paper Web Lab v3 reportedly had touch controls, territory capture, opponents, a 60 Hz fixed simulation step, PWA caching, and a gallery for 40 ASTC textures.
-- Prior notes explicitly said original game logic had not been transferred, capture and opponents remained approximate, and iPhone behavior and ASTC decoding had not been verified.
-- Earlier deliverables were linked as downloadable archives in the former chat. Those archives are not present in this workspace.
+- A prototype called Paper Web Lab v3 was described as having touch controls, territory capture, opponents, a 60 Hz fixed simulation step, PWA caching, and a gallery for 40 ASTC textures.
+- The same chat acknowledged that original game logic had not been transferred, capture and opponents were approximate, and iPhone behavior and ASTC decoding were not verified.
+- The archive itself is not available here, so none of those implementation claims have been verified against its files.
 
 ## Direct IPA inspection (2026-11-09)
 
@@ -36,11 +36,12 @@ The version and asset inventory are directly verified. The scan has not yet esta
 
 ## Verification plan
 
-1. Inspect the Gameplay scene object hierarchy and serialised component fields in the private bundles; use IL2CPP metadata to identify relevant code types and method names.
-2. Obtain the gameplay recording when available and measure camera behavior, speed, turn response, trail collision, capture, percentage calculation, and opponent behavior from repeatable observations.
-3. Record each observation with a timestamp or reproduction steps and confidence level.
-4. Replace the current toy scaffold with modular simulation/rendering based on verified behavior, comparing at matching viewport sizes.
-5. Keep original copyrighted files out of the public repository and public hosting.
+1. Map gameplay-critical scene objects, serialized components, references, animations, and asset dependencies from the private bundles.
+2. Identify relevant IL2CPP classes and methods from metadata and native binary where feasible; keep decompiled or derived private data local.
+3. Obtain a gameplay recording or run the original on an iPhone. Measure camera behavior, speed, turn response, trail collision, capture, percentages, bot decisions, animation timing, and audio cues.
+4. Build an evidence-backed behavior and visual specification. Mark each item confirmed, inferred, or unknown.
+5. Only after the specification is sufficient, implement the port and compare it interaction-by-interaction and frame-by-frame on iPhone Safari. Do not present an approximation as a playable build.
+6. Keep original copyrighted files out of the public repository and public hosting.
 
 ## Open constraints
 
