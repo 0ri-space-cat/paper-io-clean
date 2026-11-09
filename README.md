@@ -12,6 +12,6 @@ The original iOS app is a Unity IL2CPP application. This project is an independe
 
 The IPA's version and bundled Unity scenes/assets have been inspected. Findings, confidence, and unresolved questions are tracked in [RESEARCH.md](RESEARCH.md). The IPA and extracted files stay outside GitHub in an ignored local `private-reference/` directory. Do not add the original app or extracted copyrighted assets to this public repository.
 
-## Reference needed for visual and timing validation
+## Reference status
 
-The IPA reveals packaged assets and serialized scene data, but it does not provide a live gameplay recording. A screen recording or access to the original running on an iPhone is needed to measure motion, input latency, animation timing, and device-specific behavior.
+The IPA and a gameplay recording are now available and inspected. The recording supports visual comparison and broad gameplay sequencing, but not exact movement or input-response measurements because no touch indicator is visible. Controlled input runs or live access to the original on an iPhone are still needed to measure exact movement and device-specific behavior.
