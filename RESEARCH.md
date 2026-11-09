@@ -20,6 +20,8 @@
 - Addressables catalog and local iOS bundles are present. Readable bundle names include `scene_gameplay_scenes_all`, `gameplay_assets_all`, `feature_gameplaymechanics_assets_all`, and `scene_main_scenes_all`.
 - Unity asset inspection found gameplay scene objects including `GameplayController`, `GameplayMechanicsController`, `GameplayBordersController`, `Player`, `Bots`, `Paint`, `Trail`, `Camera`, `RetractingTrailController`, and `BlinkingTrailController`.
 - Gameplay assets include named trail renderers and visual states such as `MainTrail`, `Trail_InZone`, `Trail_InPlayerZone`, `Actor_Trail`, `FX_CutTrail_Glowy_V3`, and several bot movement/zone-closing animations. These establish relevant asset concepts, not exact rules or timings.
+- Serialized gameplay animation clips expose source durations and loop flags: `Bot_Blend_Move` 2.567s (loop), `Bot_Blend_MoveFast` 1.333s (loop), left/right tilt 2.55s (loop), fast tilt 0.783s (loop), `Bot_Consume` 0.5s, `Bot_Death` 0.233s, `Bot_Revive` 0.8s, new/existing spawn 0.75s/0.383s, zone-close medium/big 0.6s/0.9s, and skin zone-close burst 0.567s. Character skin move clips found in the dedicated skins bundle are 2.0s loops.
+- These are source clip lengths, not proof of in-game playback duration; Animator blend trees, speed multipliers, and state transitions may change what the player sees.
 - An exploratory v39-aware parse reports 23,447 type definitions, 152,290 methods, and 222 images. It resolves version-39 variable-width type indexes using a candidate type-count threshold of 100,000; that candidate has not been validated against the native registration table. A stock Il2CppDumper release rejected v39, and a v39-aware fork reached a duplicate-index parse error on this build.
 - Method and type names expose the game architecture: `PlayerBase`, `PlayerSpeedModel`, `GenericPlayer`, `GenericZone`, `ZoneUtils`, `GameplayController`, `RetractingTrailController`, `GameplayBordersController`, and bot controllers.
 - `PlayerSpeedModel` has distinct base linear/angular speeds, linear multipliers, additive speed, and speed caps; angular speed also receives AI/target-distance inputs. `GameplayController` has camera size limits and methods to set speed values and update the local player's base speed.
@@ -33,12 +35,12 @@
 
 ### Limits of this inspection
 
-The IPA version, bundle inventory, and existence of named types/methods are directly verified. The scan has not yet established exact board dimensions, live movement rates, collision tolerances, the exact capture implementation, bot decision rules, skin/animation timing, or complete gameplay visuals. Native IL2CPP behavior is compiled into the application binary; metadata names and scene assets are useful architecture evidence, not source-level behavioral proof. A v39-aware metadata parse needs validation against the binary's registration tables before relying on serialized method/field indexes or generating code.
+The IPA version, bundle inventory, named types/methods, and serialized animation source lengths are directly inspected. The scan has not yet established exact board dimensions, live movement rates, collision tolerances, the exact capture implementation, bot decision rules, in-game skin/animation playback timing, or complete gameplay visuals. Native IL2CPP behavior is compiled into the application binary; metadata names and scene assets are useful architecture evidence, not source-level behavioral proof. A v39-aware metadata parse needs validation against the binary's registration tables before relying on serialized method/field indexes or generating code.
 
 ## Materials previously reported but still unavailable
 
 - The referenced conversation text is available through the Codex thread history.
-- The gameplay recording and previous Web Lab ZIP archives are not available at their former `/mnt/data` paths in this workspace.
+- The gameplay recording and previous Web Lab ZIP archives are not available at their former `/mnt/data` paths or in the searched Downloads/Codex folders. The user has said they will attach the recording again; it has not appeared in the workspace yet.
 - The IPA is available separately at the path above; it has been inspected and its Unity Data extracted locally.
 - The GitHub repository was empty at clone time.
 
