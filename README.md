@@ -1,21 +1,17 @@
-# Paper.io 2 web research port
+# Paper.io 2 web port research
 
-An ad-free browser implementation project targeting the gameplay and presentation of Paper.io 2 for iOS 4.41.0. This repository contains only original implementation code and research notes. It does not contain the original app, extracted assets, or gameplay recording.
+This repository is currently research-only. There is no playable prototype: a rough approximation would not meet the project's requirement for a faithful Paper.io 2 iOS 4.41.0 experience.
 
-## Current status
+## Acceptance target
 
-The repository was empty when this work began. The previous conversation described a Web Lab v3 prototype and a gameplay recording, but those archives are not available in this workspace. The iOS 4.41.0 IPA is now directly available and its Unity data has been inspected locally; the current browser scaffold still has not been reconciled with the original behavior.
+Do not present a playable web build until the core loop, movement and turning, territory rules, collisions, opponents, original visual assets, skins, animations, audio, and mobile interaction have been mapped against the reference. The finished web app must run reliably in iPhone Safari and contain no advertising.
 
-The IPA is a Unity IL2CPP build, not portable C# source. An original browser implementation can reproduce observed behavior, but cannot run the proprietary Unity app or its original game logic as-is. Fidelity must be established by comparing measured behavior and visuals against an accessible reference build and recording. The IPA exposes scene structure and bundles for research; confirmed details and unverified questions are tracked in [RESEARCH.md](RESEARCH.md). Advertising is out of scope even though ad frameworks are present in the original app.
+The original iOS app is a Unity IL2CPP application. This project is an independent web implementation, not the original executable running inside a browser. Reverse engineering and side-by-side validation are required; exact parity must not be claimed without evidence.
 
-## Run
+## Research status
 
-Open `index.html` in a modern browser. For local development, serve this directory over HTTP, for example `python3 -m http.server 8000`, then open `http://localhost:8000`.
+The IPA's version and bundled Unity scenes/assets have been inspected. Findings, confidence, and unresolved questions are tracked in [RESEARCH.md](RESEARCH.md). The IPA and extracted files stay outside GitHub in an ignored local `private-reference/` directory. Do not add the original app or extracted copyrighted assets to this public repository.
 
-## Private reference materials
+## Reference needed for visual and timing validation
 
-Keep the IPA, extracted copyrighted assets, and gameplay recording outside this public repository. Store them in a private local reference directory and use them only for comparison. Do not enable public hosting for a build that includes extracted original assets.
-
-## Evidence
-
-See [RESEARCH.md](RESEARCH.md) for what is known from the prior conversation and what still needs direct verification.
+The IPA reveals packaged assets and serialized scene data, but it does not provide a live gameplay recording. A screen recording or access to the original running on an iPhone is needed to measure motion, input latency, animation timing, and device-specific behavior.
