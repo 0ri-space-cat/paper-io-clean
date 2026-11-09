@@ -1,0 +1,12 @@
+# Private reference materials and extracted original game data
+/private-reference/
+*.ipa
+*.mp4
+*.astc
+*.bundle
+*.asset
+*.unity3d
+/assets/original/
+
+# Local development artifacts
+.DS_Store
