@@ -10,7 +10,7 @@ The original iOS app is a Unity IL2CPP application. This project is an independe
 
 ## Research status
 
-The IPA's version and bundled Unity scenes/assets have been inspected. Findings, confidence, and unresolved questions are tracked in [RESEARCH.md](RESEARCH.md). The first implementation module under `src/core/` provides continuous-polygon geometry without inventing game-specific tolerances. The IPA and extracted files stay outside GitHub in an ignored local `private-reference/` directory. Do not add the original app or extracted copyrighted assets to this public repository.
+The IPA's version and bundled Unity scenes/assets have been inspected. Findings, confidence, and unresolved questions are tracked in [RESEARCH.md](RESEARCH.md). The first modules under `src/core/` provide continuous-polygon geometry and a territory-area data model without inventing game-specific tolerances. The IPA and extracted files stay outside GitHub in an ignored local `private-reference/` directory. Do not add the original app or extracted copyrighted assets to this public repository.
 
 ## Reference status
 
