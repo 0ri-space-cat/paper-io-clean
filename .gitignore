@@ -9,4 +9,5 @@
 /assets/original/
 
 # Local development artifacts
+/node_modules/
 .DS_Store
