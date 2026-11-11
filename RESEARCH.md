@@ -65,7 +65,7 @@ The IPA version, bundle inventory, named types/methods, and serialized animation
 
 ## Product gate
 
-Implementation has begun in `src/core/geometry.ts` with reusable continuous-polygon primitives: signed area, segment intersection, point containment, and self-intersection detection. These are building blocks only; they do not assert the original game's capture semantics or numeric collision tolerances. The earlier toy browser scaffold remains removed. A playable build should wait until the evidence-backed parity specification covers mechanics, original visual presentation, skins, animations, and movement. Controlled input measurements and iPhone Safari validation remain outstanding.
+Implementation has begun in `src/core/geometry.ts` and `src/core/territory.ts`: reusable continuous-polygon primitives plus an area model for disconnected territory polygons with holes. These are building blocks only; they do not assert the original game's capture semantics, region union/clipping behavior, or numeric collision tolerances. Strict TypeScript type checking passes. The earlier toy browser scaffold remains removed. A playable build should wait until the evidence-backed parity specification covers mechanics, original visual presentation, skins, animations, and movement. Controlled input measurements and iPhone Safari validation remain outstanding.
 
 ## Open constraints
 
