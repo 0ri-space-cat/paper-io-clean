@@ -65,7 +65,7 @@ The IPA version, bundle inventory, named types/methods, and serialized animation
 
 ## Product gate
 
-The earlier toy browser scaffold has been removed from the repository. No playable web build should be added until the project has an evidence-backed parity specification for the requested mechanics, original visual presentation, skins, animations, and movement. The recording now supports visual comparison, but controlled input measurements and iPhone Safari validation remain outstanding.
+Implementation has begun in `src/core/geometry.ts` with reusable continuous-polygon primitives: signed area, segment intersection, point containment, and self-intersection detection. These are building blocks only; they do not assert the original game's capture semantics or numeric collision tolerances. The earlier toy browser scaffold remains removed. A playable build should wait until the evidence-backed parity specification covers mechanics, original visual presentation, skins, animations, and movement. Controlled input measurements and iPhone Safari validation remain outstanding.
 
 ## Open constraints
 
