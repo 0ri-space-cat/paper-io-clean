@@ -1,6 +1,6 @@
 # Paper.io 2 web port research
 
-This repository is currently research-only. There is no playable prototype: a rough approximation would not meet the project's requirement for a faithful Paper.io 2 iOS 4.41.0 experience.
+Implementation has started with engine-independent geometry primitives. There is no playable build yet: movement values, territory rules, and visual behavior still need to be derived and checked against Paper.io 2 iOS 4.41.0 before a game loop can claim fidelity.
 
 ## Acceptance target
 
@@ -10,7 +10,7 @@ The original iOS app is a Unity IL2CPP application. This project is an independe
 
 ## Research status
 
-The IPA's version and bundled Unity scenes/assets have been inspected. Findings, confidence, and unresolved questions are tracked in [RESEARCH.md](RESEARCH.md). The IPA and extracted files stay outside GitHub in an ignored local `private-reference/` directory. Do not add the original app or extracted copyrighted assets to this public repository.
+The IPA's version and bundled Unity scenes/assets have been inspected. Findings, confidence, and unresolved questions are tracked in [RESEARCH.md](RESEARCH.md). The first implementation module under `src/core/` provides continuous-polygon geometry without inventing game-specific tolerances. The IPA and extracted files stay outside GitHub in an ignored local `private-reference/` directory. Do not add the original app or extracted copyrighted assets to this public repository.
 
 ## Reference status
 
