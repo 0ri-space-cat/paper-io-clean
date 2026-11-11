@@ -22,8 +22,8 @@ export function signedArea(ring: Ring): number {
 
   let twiceArea = 0;
   for (let i = 0; i < ring.length; i += 1) {
-    const current = ring[i];
-    const next = ring[(i + 1) % ring.length];
+    const current = ring[i]!;
+    const next = ring[(i + 1) % ring.length]!;
     twiceArea += current.x * next.y - next.x * current.y;
   }
   return twiceArea / 2;
@@ -93,8 +93,8 @@ export function containsPoint(
 
   let inside = false;
   for (let i = 0, j = ring.length - 1; i < ring.length; j = i, i += 1) {
-    const a = ring[j];
-    const b = ring[i];
+    const a = ring[j]!;
+    const b = ring[i]!;
     if (onSegment(a, b, point, epsilon)) return boundary === 'inside';
 
     const crossesRay = (a.y > point.y) !== (b.y > point.y);
@@ -111,13 +111,13 @@ export function hasSelfIntersection(ring: Ring, epsilon = 0): boolean {
 
   const edgeCount = ring.length;
   for (let i = 0; i < edgeCount; i += 1) {
-    const a = ring[i];
-    const b = ring[(i + 1) % edgeCount];
+    const a = ring[i]!;
+    const b = ring[(i + 1) % edgeCount]!;
     for (let j = i + 1; j < edgeCount; j += 1) {
       // Consecutive edges and the first/last pair share an allowed endpoint.
       if (j === i || j === i + 1 || (i === 0 && j === edgeCount - 1)) continue;
-      const c = ring[j];
-      const d = ring[(j + 1) % edgeCount];
+      const c = ring[j]!;
+      const d = ring[(j + 1) % edgeCount]!;
       if (segmentsIntersect(a, b, c, d, epsilon)) return true;
     }
   }
